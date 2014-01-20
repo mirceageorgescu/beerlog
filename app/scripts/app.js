@@ -25,6 +25,11 @@ angular.module('beerlogApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
+      .when('/drink', {
+        templateUrl: 'partials/drink',
+        controller: 'MainCtrl',
+        authenticate: true
+      })
       .otherwise({
         redirectTo: '/'
       });

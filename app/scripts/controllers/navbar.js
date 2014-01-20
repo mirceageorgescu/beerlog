@@ -3,8 +3,8 @@
 angular.module('beerlogApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'Home',
-      'link': '/'
+      'title': 'Drink',
+      'link': '/drink'
     }, {
       'title': 'Settings',
       'link': '/settings'

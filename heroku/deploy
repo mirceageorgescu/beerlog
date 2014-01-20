@@ -1,0 +1,41 @@
+#!/bin/bash
+
+function cleanup {
+  rm heroku/dist
+}
+
+# generate site and compile sass
+grunt build
+
+#check if out dir exist if not abort
+if [ ! -d "dist" ]; then
+  echo 'Canceled deploy: dist directory not found!';
+  exit 1;
+fi
+
+# remove old build
+rm heroku/dist
+
+# copy the new build
+cp -R dist heroku
+
+# copy the Procfile
+cp heroku/Procfile heroku/dist/Procfile
+
+# go into the dir, create a new git repo, add all files to git,
+# and force push the branch to heroku
+cd heroku/dist
+git init
+git add .
+git commit -m"heroku release"
+heroku git:remote -a beerlog-prod
+git push -f heroku master
+
+# open the online page
+heroku open
+
+# remove the dist folder
+cd ..
+rm -rf dist
+cd ..
+rm -rf dist/*

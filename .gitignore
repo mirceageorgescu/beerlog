@@ -2,7 +2,8 @@ node_modules
 public
 .tmp
 .sass-cache
+.DS_Store
 app/bower_components
-heroku
+heroku/dist
 /views
 dist

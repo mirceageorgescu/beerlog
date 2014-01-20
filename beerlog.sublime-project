@@ -1,0 +1,26 @@
+{
+  "folders":
+  [
+    {
+      "path": "/path/to/project",
+      "folder_exclude_patterns": [
+        ".sass-cache",
+        ".tmp",
+        "dist",
+        "heroku",
+        "node_modules",
+        "test"
+      ],
+      "file_exclude_patterns": [
+        "Gemfile.lock",
+        "app/*.html"
+      ]
+    }
+  ],
+    "settings": {
+      // The number of spaces a tab is considered equal to
+      "tab_size": 2,
+      // Set to true to insert spaces when tab is pressed
+      "translate_tabs_to_spaces": true
+  }
+}

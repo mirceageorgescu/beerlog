@@ -12,8 +12,7 @@
         "test"
       ],
       "file_exclude_patterns": [
-        "Gemfile.lock",
-        "app/*.html"
+        "Gemfile.lock"
       ]
     }
   ],

@@ -20,14 +20,19 @@ angular.module('beerlogApp', [
         templateUrl: 'partials/signup',
         controller: 'SignupCtrl'
       })
-      .when('/settings', {
-        templateUrl: 'partials/settings',
-        controller: 'SettingsCtrl',
+      .when('/me/settings', {
+        templateUrl: 'partials/me/settings',
+        controller: 'UserCtrl',
         authenticate: true
       })
-      .when('/drink', {
-        templateUrl: 'partials/drink',
-        controller: 'MainCtrl',
+      .when('/me/beers/add', {
+        templateUrl: 'partials/me/beers/add',
+        controller: 'UserCtrl',
+        authenticate: true
+      })
+      .when('/me/beers', {
+        templateUrl: 'partials/me/beers',
+        controller: 'UserCtrl',
         authenticate: true
       })
       .otherwise({

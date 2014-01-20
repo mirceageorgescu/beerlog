@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('beerlogApp')
-  .controller('SettingsCtrl', function ($scope, User, Auth) {
+  .controller('UserCtrl', function ($scope, User, Auth) {
     $scope.errors = {};
+    $scope.user = Auth.currentUser();
 
     $scope.changePassword = function(form) {
       $scope.submitted = true;
@@ -18,4 +19,12 @@ angular.module('beerlogApp')
         });
       }
 		};
+
+    $scope.addBeer = function(form) {
+      $scope.submitted = true;
+  
+      if(form.$valid) {
+        window.alert('Must find a way of adding ' + $scope.user.beers.add.name + ' to db.');
+      }
+    };
   });

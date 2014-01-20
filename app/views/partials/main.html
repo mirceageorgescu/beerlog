@@ -1,6 +1,6 @@
 <div ng-include="'partials/navbar'"></div>
 
-<div class="jumbotron">
+<div class="jumbotron" ng-if="!currentUser.name">
   <h1>Hey beer lover <span ng-show="currentUser">{{ currentUser.name }}</span>!</h1>
   <p class="lead">
     You will love our free online app.

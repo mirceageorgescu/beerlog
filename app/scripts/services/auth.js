@@ -90,6 +90,23 @@ angular.module('beerlogApp')
       },
 
       /**
+       * Update user
+       * 
+       * @param  {String}   beerName
+       * @param  {Function} callback    - optional
+       * @return {Promise}              
+       */
+      updateUser: function(data, callback) {
+        var cb = callback || angular.noop;
+
+        return User.update(data, function(user) {
+          return cb(user);
+        }, function(err) {
+          return cb(err);
+        }).$promise;
+      },
+
+      /**
        * Gets all available info on authenticated user
        * 
        * @return {Object} user

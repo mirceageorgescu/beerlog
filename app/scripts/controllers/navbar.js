@@ -4,13 +4,13 @@ angular.module('beerlogApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'My beers',
-      'link': '/me/beers'
+      'link': '/beers/mybeers'
     },{
       'title': 'Add beer',
-      'link': '/me/beers/add'
+      'link': '/beers/add'
     }, {
       'title': 'Settings',
-      'link': '/me/settings'
+      'link': '/settings'
     }];
     
     $scope.logout = function() {

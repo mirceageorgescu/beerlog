@@ -20,18 +20,18 @@ angular.module('beerlogApp', [
         templateUrl: 'partials/signup',
         controller: 'SignupCtrl'
       })
-      .when('/me/settings', {
-        templateUrl: 'partials/me/settings',
+      .when('/settings', {
+        templateUrl: 'partials/settings',
         controller: 'UserCtrl',
         authenticate: true
       })
-      .when('/me/beers/add', {
-        templateUrl: 'partials/me/beers/add',
+      .when('/beers/add', {
+        templateUrl: 'partials/beers/add',
         controller: 'UserCtrl',
         authenticate: true
       })
-      .when('/me/beers', {
-        templateUrl: 'partials/me/beers',
+      .when('/beers/mybeers', {
+        templateUrl: 'partials/beers/mybeers',
         controller: 'UserCtrl',
         authenticate: true
       })

@@ -9,6 +9,7 @@ First of all you will need to install [node.js](http://nodejs.org), [Compass](ht
 
     git clone https://github.com/mirceageorgescu/beerlog.git
     npm install
+    npm install -g bower
     bower install
 
 ## Build

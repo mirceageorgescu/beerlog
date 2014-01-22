@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('beerlogApp')
-  .controller('UserCtrl', function ($scope, User, Auth) {
+  .controller('UserCtrl', function ($scope, User, Auth, $location) {
     $scope.errors = {};
     $scope.user = Auth.currentUser();
 
@@ -24,7 +24,13 @@ angular.module('beerlogApp')
       $scope.submitted = true;
   
       if(form.$valid) {
-        window.alert('Must find a way of adding ' + $scope.user.beers.add.name + ' to db.');
+        Auth.updateUser({
+          'beers' : { 'name': $scope.user.beers.add.name }
+        })
+        .then( function() {
+          // Beer added, redirect to beer list
+          $location.path('/beers/mybeers');
+        });
       }
     };
   });

@@ -1,30 +1,30 @@
 <div ng-include="'partials/navbar'"></div>
 
-<div class="row">
-  <div class="col-sm-12">
-    <h1>Drink a beer</h1>
-  </div>
-  <div class="col-sm-12">
-    <form class="form" name="form" ng-submit="addBeer(form)" novalidate>
+<div class="main-content">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Drink a beer</h1>
+    </div>
+    <div class="col-sm-12">
+      <form class="form" name="form" ng-submit="addBeer(form)" novalidate>
 
-      <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                          'has-error': form.name.$invalid && submitted }">
-        <label>Name</label>
+        <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
+                                            'has-error': form.name.$invalid && submitted }">
+          <label>Name</label>
 
-        <input type="text" name="name" class="form-control" ng-model="user.beers.add.name"
-               required autofocus/>
-        <p class="help-block" ng-show="form.name.$error.required && submitted">
-          A name is required
-        </p>
-      </div>
+          <input type="text" name="name" class="form-control" ng-model="user.beers.add.name"
+                 required autofocus/>
+          <p class="help-block" ng-show="form.name.$error.required && submitted">
+            A name is required
+          </p>
+        </div>
 
-      <button class="btn btn-lg btn-primary" type="submit">Drink the motherfucking beer</button>
+        <button class="btn btn-lg btn-primary" type="submit">Drink the motherfucking beer</button>
 
-      <p class="help-block"> {{ message }} </p>
-    </form>
+        <p class="help-block"> {{ message }} </p>
+      </form>
+    </div>
   </div>
 </div>
 
-<div class="footer">
-  <p>Love and appreciate beer.</p>
-</div>
+<div ng-include="'partials/footer'"></div>

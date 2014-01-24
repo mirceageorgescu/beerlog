@@ -9,7 +9,9 @@
     "connect-mongo": "~0.4.0",
     "passport": "latest",
     "passport-local": "latest",
-    "ejs": "~0.8.4"
+    "ejs": "~0.8.4",
+    "mongoose-findorcreate": "~0.1.2",
+    "passport-facebook": "~1.0.2"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

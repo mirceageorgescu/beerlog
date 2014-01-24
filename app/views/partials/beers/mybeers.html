@@ -14,6 +14,7 @@
           <div class="media-body">
             <h4 class="media-heading"><a href="#">{{beer.name}}</a></h4>
             <time>{{beer.date | date:'yyyy-MM-dd HH:mm:ss Z'}}</time>
+            <div ng-if="beer.location">Location: {{beer.location.lat}}, {{beer.location.lng}}</div>
           </div>
         </li>
       </ul>

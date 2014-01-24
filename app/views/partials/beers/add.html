@@ -7,16 +7,21 @@
     </div>
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="addBeer(form)" novalidate>
-
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
                                             'has-error': form.name.$invalid && submitted }">
           <label>Name</label>
+          <input type="text" name="name" class="form-control" ng-model="user.beers.add.name" required autofocus/>
+          <p class="help-block" ng-show="form.name.$error.required && submitted">A name is required</p>
+        </div>
 
-          <input type="text" name="name" class="form-control" ng-model="user.beers.add.name"
-                 required autofocus/>
-          <p class="help-block" ng-show="form.name.$error.required && submitted">
-            A name is required
-          </p>
+        <div class="form-group">
+          <label>Latitude</label>
+          <input type="text" name="location" class="form-control" value="{{myLocation.lat}}" disabled />
+        </div>
+
+        <div class="form-group">
+          <label>Longitude</label>
+          <input type="text" name="location" class="form-control" value="{{myLocation.lng}}" disabled />
         </div>
 
         <button class="btn btn-lg btn-primary" type="submit">Drink the motherfucking beer</button>

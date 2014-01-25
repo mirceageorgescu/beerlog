@@ -40,7 +40,8 @@ angular.module('beerlogApp')
             'location': {
               'lat': $scope.myLocation.lat,
               'lng': $scope.myLocation.lng,
-            }
+            },
+            'image': $scope.user.beers.add.photo
           }
         })
         .then( function() {

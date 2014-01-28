@@ -48,6 +48,10 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
     margin-top: 28px;
 }
 
+.form-control {
+    font-size: 16px;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {

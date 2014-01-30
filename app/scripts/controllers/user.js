@@ -1,19 +1,9 @@
 'use strict';
 
 angular.module('beerlogApp')
-  .controller('UserCtrl', function ($scope, User, Auth, $location) {
+  .controller('UserCtrl', function ($scope, User, Auth) {
     $scope.errors = {};
     $scope.user = Auth.currentUser();
-    $scope.myLocation = {};
-
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        $scope.$apply(function () {
-          $scope.myLocation.lat = position.coords.latitude;
-          $scope.myLocation.lng = position.coords.longitude;
-        });
-      });
-    }
 
     $scope.changePassword = function(form) {
       $scope.submitted = true;
@@ -29,25 +19,4 @@ angular.module('beerlogApp')
         });
       }
 		};
-
-    $scope.addBeer = function(form) {
-      $scope.submitted = true;
-  
-      if(form.$valid) {
-        Auth.updateUser({
-          'beers' : {
-            'name': $scope.user.beers.add.name,
-            'location': {
-              'lat': $scope.myLocation.lat,
-              'lng': $scope.myLocation.lng,
-            },
-            'image': $scope.image.resized
-          }
-        })
-        .then( function() {
-          // Beer added, redirect to beer list
-          $location.path('/beers/mybeers');
-        });
-      }
-    };
   });

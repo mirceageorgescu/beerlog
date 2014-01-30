@@ -12,7 +12,8 @@
     "angular-sanitize": "1.2.6",
     "angular-route": "1.2.6",
     "ios-imagefile-megapixel": "git://github.com/stomita/ios-imagefile-megapixel.git",
-    "exif-js": "git://github.com/jseidelin/exif-js.git"
+    "exif-js": "git://github.com/jseidelin/exif-js.git",
+    "underscore": "~1.5.2"
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",

@@ -1,0 +1,16 @@
+<div ng-include="'partials/navbar'"></div>
+
+<div class="main-content">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>{{beer.name}}</h1>
+
+      <img ng-if="beer.image.dataURL" class="media-object" src="{{beer.image.dataURL}}" alt="...">
+      <time>{{beer.date | date:'yyyy-MM-dd HH:mm:ss Z'}}</time>
+      <div ng-if="beer.location">Location: {{beer.location.lat}}, {{beer.location.lng}}</div>
+      
+    </div>
+  </div>
+</div>
+
+<div ng-include="'partials/footer'"></div>

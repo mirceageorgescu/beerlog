@@ -3,6 +3,10 @@
 angular.module('beerlogApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
+      'title': 'Beer Map',
+      'link': '/beers/map',
+      'authenticate': true
+    },{
       'title': 'My beers',
       'link': '/beers/mybeers',
       'authenticate': true

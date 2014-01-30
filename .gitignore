@@ -7,3 +7,4 @@ app/bower_components
 heroku/dist
 /views
 dist
+run.sh

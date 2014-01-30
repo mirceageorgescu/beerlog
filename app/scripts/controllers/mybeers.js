@@ -24,16 +24,17 @@ angular.module('beerlogApp')
 
     $scope.addBeer = function(form) {
       $scope.submitted = true;
+      var image = $scope.image || {resized: {}};
   
-      if(form.$valid) {
+      if(form.$valid && $scope.searchStr) {
         Auth.updateUser({
           'beers' : {
-            'name': $scope.user.beers.add.name,
+            'name': $scope.searchStr.title,
             'location': {
               'lat': $scope.myLocation.lat,
               'lng': $scope.myLocation.lng,
             },
-            'image': $scope.image.resized
+            'image': image.resized
           }
         })
         .then( function() {

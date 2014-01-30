@@ -11,7 +11,8 @@
     "passport-local": "latest",
     "ejs": "~0.8.4",
     "mongoose-findorcreate": "~0.1.2",
-    "passport-facebook": "~1.0.2"
+    "passport-facebook": "~1.0.2",
+    "beer-advocate-api": "0.0.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

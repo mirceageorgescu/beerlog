@@ -7,11 +7,20 @@
     </div>
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="addBeer(form)" novalidate>
-        <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
+        <div class="form-group" ng-class="{ 'has-success': searchStr.title && submitted,
+                                            'has-error': !searchStr.title && submitted }">
+
           <label>Name</label>
-          <input type="text" name="name" class="form-control" ng-model="user.beers.add.name" required autofocus/>
-          <p class="help-block" ng-show="form.name.$error.required && submitted">A name is required</p>
+          <angucomplete id="members"
+              placeholder="Search beer"
+              pause="400"
+              selectedobject="searchStr"
+              url="/api/external/search/"
+              titlefield="beer_name"
+              descriptionfield="brewery_name"
+              inputclass="form-control" />
+
+          <p class="help-block" ng-show="!searchStr.title && submitted">A name is required</p>
         </div>
 
         <div class="form-group">

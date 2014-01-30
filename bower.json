@@ -10,7 +10,9 @@
     "angular-resource": "1.2.6",
     "angular-cookies": "1.2.6",
     "angular-sanitize": "1.2.6",
-    "angular-route": "1.2.6"
+    "angular-route": "1.2.6",
+    "ios-imagefile-megapixel": "git://github.com/stomita/ios-imagefile-megapixel.git",
+    "exif-js": "git://github.com/jseidelin/exif-js.git"
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",

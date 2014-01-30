@@ -26,7 +26,8 @@
 
         <div class="form-group">
           <label>Upload picture</label>
-          <input type="file" name="photo" ng-model="user.beers.add.photo" />
+          <input type="file" accept="image/*" image="image" />
+          <img ng-show="image" ng-src="{{image.resized.dataURL}}" />
         </div>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Drink the motherfucking beer</button>

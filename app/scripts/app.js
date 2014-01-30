@@ -4,7 +4,8 @@ angular.module('beerlogApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'imageupload'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider

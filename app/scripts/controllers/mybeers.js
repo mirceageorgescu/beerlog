@@ -27,6 +27,7 @@ angular.module('beerlogApp')
       var image = $scope.image || {resized: {}};
   
       if(form.$valid && $scope.searchStr) {
+
         Auth.updateUser({
           'beers' : {
             'name': $scope.searchStr.title,
@@ -34,6 +35,7 @@ angular.module('beerlogApp')
               'lat': $scope.myLocation.lat,
               'lng': $scope.myLocation.lng,
             },
+            'rating': $scope.rating,
             'image': image.resized
           }
         })

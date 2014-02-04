@@ -5,6 +5,8 @@
     <div class="col-sm-12">
       <h1>{{beer.name}}</h1>
 
+      <p>Rating: {{beer.rating}}</p>
+
       <img ng-if="beer.image.dataURL" class="media-object" src="{{beer.image.dataURL}}" alt="...">
       <time>{{beer.date | date:'yyyy-MM-dd HH:mm:ss Z'}}</time>
       <img ng-if="beer.location" class="img-responsive" src="http://maps.googleapis.com/maps/api/staticmap?center={{beer.location.lat}},{{beer.location.lng}}&amp;zoom=13&amp;size=600x300&amp;maptype=roadmap&amp;markers=color:blue%7C{{beer.location.lat}},{{beer.location.lng}}&amp;sensor=false" />

@@ -43,6 +43,6 @@ We use a [trello board](https://trello.com/b/dJorGPsW/beerlog-app). Go have a lo
 ### Coding Style and Rules
 
 1. **Use soft-tabs with two-space indent.**
-2. **Use Unix Line Endings.** Default on ST2 and other Mac and Unix editors. If you're on Windows, make sure you have this.
+2. **Use Unix Line Endings.** Default on ST2 and other Mac and Unix editors. If you are developing on Windows, make sure you have this.
 
 * Sublime users: check out our [project config file](https://github.com/mirceageorgescu/beerlog/blob/master/beerlog.sublime-project).*

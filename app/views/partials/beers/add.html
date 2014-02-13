@@ -15,9 +15,8 @@
               placeholder="Search beer"
               pause="400"
               selectedobject="searchStr"
-              url="/api/external/search/"
-              titlefield="beer_name"
-              descriptionfield="brewery_name"
+              url="/api/beers/search/name/"
+              titlefield="name"
               inputclass="form-control" />
 
           <p class="help-block" ng-show="!searchStr.title && submitted">A name is required</p>

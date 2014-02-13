@@ -63,9 +63,11 @@
 }
 
 .angucomplete-image {
-    height: 34px;
-    width: 34px;
-    border-radius: 50%;
+    //height: 34px;
+    //width: 34px;
+    //border-radius: 50%;
+    max-width: 34px;
+    max-height: 34px;
     border-color: #ececec;
     border-style: solid;
     border-width: 1px;

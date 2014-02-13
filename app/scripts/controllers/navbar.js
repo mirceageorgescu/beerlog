@@ -7,6 +7,10 @@ angular.module('beerlogApp')
       'link': '/beers/map',
       'authenticate': true
     },{
+      'title': 'Search Beer',
+      'link': '/beer/search',
+      'authenticate': false
+    },{
       'title': 'My beers',
       'link': '/beers/mybeers',
       'authenticate': true

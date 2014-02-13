@@ -42,6 +42,16 @@ angular.module('beerlogApp', [
         controller: 'MyBeers',
         authenticate: true
       })
+      .when('/beer/search', {
+        templateUrl: 'partials/beer/search',
+        controller: 'Beer',
+        authenticate: false
+      })
+      .when('/beer/:id', {
+        templateUrl: 'partials/beer/beerDetail',
+        controller: 'Beer',
+        authenticate: false
+      })
       .otherwise({
         redirectTo: '/'
       });

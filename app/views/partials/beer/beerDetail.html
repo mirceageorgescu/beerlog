@@ -1,0 +1,48 @@
+<div ng-include="'partials/navbar'"></div>
+
+<div class="main-content">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>{{beer.name}}</h1>
+      <p class="lead">{{beer.brewery.name}} <span ng-repeat="area in beer.brewery.area">{{area}}></span> {{beer.brewery.country}}</p>
+
+      <div class="row">
+
+        <div class="col-md-3 col-sm-3">
+          <img src="/images/beer/{{beer.image}}" class="img-rounded">
+        </div>
+
+        <div class="col-md-9 col-sm-9">
+          <p>
+            <button ng-click="drinkBeer()" class="btn btn-lg btn-primary btn-block">Drink this beer</button>
+          </p>
+
+          <p style="margin-bottom:2em;">{{beer.description}}</p>
+
+          <h3>ABV</h3>
+          <p>{{beer.abv}}% Alcohol</p>
+
+          <h3>Style</h3>
+          <p>{{beer.style}}</p>
+
+          <h3>Shold be drinked from</h3>
+          <ul ng-repeat="glass in beer.glassware">
+            <li>{{glass}}</li>
+          </ul>
+
+          <h3>Calories</h3>
+          <p>{{beer.calories}}</p>
+
+          <h3>Barcodes</h3>
+          <ul ng-repeat="barcode in beer.barcodes">
+            <li>{{barcode}}</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div ng-include="'partials/footer'"></div>

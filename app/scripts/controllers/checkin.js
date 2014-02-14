@@ -1,11 +1,10 @@
 'use strict';
 
 angular.module('beerlogApp')
-  .controller('MyBeers', function ($scope, User, Auth, $routeParams, $location) {
-    $scope.user = Auth.currentUser();
+  .controller('CheckinCtrl', function ($scope, Beer, Auth, $routeParams, $location) {
+    $scope.errors = {};
     $scope.myLocation = {};
-    $scope.beerId = $routeParams.beerId;
-    $scope.beer = {};
+    $scope.beer = Beer.get({id: $routeParams.id});
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (position) {
@@ -16,21 +15,16 @@ angular.module('beerlogApp')
       });
     }
 
-    $scope.user.$promise.then(function () {
-      $scope.beer = window._.find($scope.user.beers, function(beer) {
-        return beer._id === $scope.beerId;
-      });
-    });
-
-    $scope.addBeer = function(form) {
+    $scope.addCheckin = function(form) {
       $scope.submitted = true;
       var image = $scope.image || {resized: {}};
   
-      if(form.$valid && $scope.searchStr) {
+      if(form.$valid) {
 
         Auth.updateUser({
           'beers' : {
-            'name': $scope.searchStr.title,
+            '_id': $scope.beer._id,
+            'name': $scope.beer.name,
             'location': {
               'lat': $scope.myLocation.lat,
               'lng': $scope.myLocation.lng,
@@ -40,8 +34,8 @@ angular.module('beerlogApp')
           }
         })
         .then( function() {
-          // Beer added, redirect to beer list
-          $location.path('/beers/mybeers');
+          // Beer added, redirect to user profile
+          $location.path('/user/' + $scope.currentUser._id);
         });
       }
     };

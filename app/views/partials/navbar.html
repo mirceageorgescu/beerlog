@@ -18,12 +18,14 @@
         <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}" ng-show="currentUser.name">
           <a ng-href="{{item.link}}">{{item.title}}</a>
         </li>
+
         <li ng-show="!currentUser.name" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li>
         <li ng-show="!currentUser.name" ng-class="{active: isActive('/signup')}"><a href="/signup">Sign up</a></li>
         <li class="dropdown" ng-show="currentUser.name">
           <a href="" class="dropdown-toggle" data-toggle="dropdown">{{ currentUser.name }} <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="/user/{{currentUser._id}}">My Profile</a></li>
+            <li><a href="/user/{{currentUser._id}}/beermap">My Beermap</a></li>
             <li><a href="/settings">Settings</a></li>
             <li class="divider"></li>
             <li ng-show="currentUser" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">Logout</a></li>

@@ -1,0 +1,29 @@
+<div ng-include="'partials/navbar'"></div>
+
+<div class="main-content">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Beer checkin</h1>
+
+      <p class="lead">This page will actually be a carcode scanner.</p>
+
+      <form class="form" name="form" ng-submit="searchBeerBarcode(form)" novalidate>
+
+        <p class="alert alert-danger alert-dismissable" ng-show="!barcode && submitted"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>A barcode is required</p>
+
+        <div class="form-group" ng-class="{ 'has-success': form.barcode.$valid && submitted,
+          'has-error': form.barcode.$invalid && submitted }">
+          <label>Beer barcode</label>
+          <input type="text" name="barcode" ng-model="barcode" placeholder="Barcode" class="form-control" required autofocus>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<div ng-include="'partials/footer'"></div>

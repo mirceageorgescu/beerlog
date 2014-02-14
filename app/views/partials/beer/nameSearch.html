@@ -1,0 +1,32 @@
+<div ng-include="'partials/navbar'"></div>
+
+<div class="main-content">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Beer checkin</h1>
+
+      <form class="form" name="form" ng-submit="searchBeerName(form)" novalidate>
+        <div class="form-group" ng-class="{ 'has-success': searchStr.title && submitted,
+                                            'has-error': !searchStr.title && submitted }">
+          <label>Beer name</label>
+          <angucomplete
+            placeholder="Search beer"
+            pause="400"
+            selectedobject="searchStr"
+            url="/api/beers/search/name/"
+            titlefield="name"
+            inputclass="form-control" />
+        </div>
+
+        <p class="help-block" ng-show="!searchStr.title && submitted">A name is required</p>
+
+        <div class="form-group">
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<div ng-include="'partials/footer'"></div>

@@ -17,7 +17,10 @@
           <div class="media-body">
             <h4 class="media-heading"><a href="/beer/{{beer._id}}">{{beer.name}}</a></h4>
             <time>{{beer.date | date:'yyyy-MM-dd HH:mm:ss Z'}}</time>
-            <p>Rating: {{beer.rating}}</p>
+            <p ng-show="beer.rating">Rating: {{beer.rating}}</p>
+            <a href="http://maps.googleapis.com/maps/api/staticmap?center={{beer.location.lat}},{{beer.location.lng}}&amp;zoom=17&amp;size=1000x1000&amp;maptype=roadmap&amp;markers=color:blue%7C{{beer.location.lat}},{{beer.location.lng}}&amp;sensor=false">
+              <img ng-if="beer.location" class="img-responsive" src="http://maps.googleapis.com/maps/api/staticmap?center={{beer.location.lat}},{{beer.location.lng}}&amp;zoom=13&amp;size=200x200&amp;maptype=roadmap&amp;markers=color:blue%7C{{beer.location.lat}},{{beer.location.lng}}&amp;sensor=false" />
+            </a>
           </div>
         </li>
       </ul>

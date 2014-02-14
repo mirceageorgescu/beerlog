@@ -9,4 +9,14 @@ angular.module('beerlogApp')
         method: 'GET'
       }
 	  });
+  })
+  .factory('BeerBarcode', function ($resource) {
+    return $resource('/api/beers/search/barcode/:barcode', {
+      id: '@barcode'
+    }, { //parameters default
+      get: {
+        method: 'GET',
+        isArray: true
+      }
+    });
   });

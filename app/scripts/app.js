@@ -27,13 +27,18 @@ angular.module('beerlogApp', [
         controller: 'UserCtrl',
         authenticate: true
       })
-      .when('/beers/add', {
-        templateUrl: 'partials/beers/add',
-        controller: 'MyBeers',
-        authenticate: true
+      .when('/beer/name-search', {
+        templateUrl: 'partials/beer/nameSearch',
+        controller: 'BeerCtrl',
+        authenticate: false
       })
-      .when('/beer/search', {
-        templateUrl: 'partials/beer/search',
+      .when('/beer/name-search-fallback/:barcode', {
+        templateUrl: 'partials/beer/nameSearchFallback',
+        controller: 'BeerCtrl',
+        authenticate: false
+      })
+      .when('/beer/barcode-search', {
+        templateUrl: 'partials/beer/barcodeSearch',
         controller: 'BeerCtrl',
         authenticate: false
       })
@@ -46,6 +51,16 @@ angular.module('beerlogApp', [
         templateUrl: 'partials/user/userDetail',
         controller: 'ProfileCtrl',
         authenticate: false
+      })
+      .when('/user/:id/beermap', {
+        templateUrl: 'partials/user/beermap',
+        controller: 'ProfileCtrl',
+        authenticate: true
+      })
+      .when('/checkin/:id', {
+        templateUrl: 'partials/checkin/addCheckin',
+        controller: 'CheckinCtrl',
+        authenticate: true
       })
       .otherwise({
         redirectTo: '/'

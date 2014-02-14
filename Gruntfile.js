@@ -199,7 +199,8 @@ module.exports = function (grunt) {
             '<%= yeoman.dist %>/public/scripts/{,*/}*.js',
             '<%= yeoman.dist %>/public/styles/{,*/}*.css',
             '<%= yeoman.dist %>/public/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-            '<%= yeoman.dist %>/public/styles/fonts/*'
+            '<%= yeoman.dist %>/public/styles/fonts/*',
+            '!<%= yeoman.dist %>/public/images/beer/*.jpg'
           ]
         }
       }
@@ -232,7 +233,10 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg,gif}',
+          src: [
+            '{,*/}*.{png,jpg,jpeg,gif}',
+            '!beer/*'
+          ],
           dest: '<%= yeoman.dist %>/public/images'
         }]
       }
@@ -243,7 +247,10 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.svg',
+          src: [
+            '{,*/}*.svg',
+            '!beer/*'
+          ],
           dest: '<%= yeoman.dist %>/public/images'
         }]
       }
@@ -299,6 +306,7 @@ module.exports = function (grunt) {
             '.htaccess',
             'bower_components/**/*',
             'images/{,*/}*.{webp}',
+            //'images/beer/*.jpg',
             'fonts/**/*'
           ]
         }, {

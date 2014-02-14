@@ -1,11 +1,14 @@
 'use strict';
 
 angular.module('beerlogApp')
-  .controller('UserCtrl', function ($scope, User, Auth) {
+  .controller('UserCtrl', function ($scope, User, Auth, $routeParams) {
     $scope.errors = {};
-    $scope.user = Auth.currentUser();
+    
+
+    $scope.user = User.get({id: $routeParams.id});
 
     $scope.changePassword = function(form) {
+      $scope.user = Auth.currentUser();
       $scope.submitted = true;
 
       if(form.$valid) {

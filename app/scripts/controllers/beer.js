@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('beerlogApp')
-  .controller('Beer', function ($scope, Beer, $location, $routeParams) {
+  .controller('BeerCtrl', function ($scope, Beer, $location, $routeParams) {
 
     $scope.beer = Beer.get({id: $routeParams.id});
 

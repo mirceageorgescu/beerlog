@@ -32,24 +32,19 @@ angular.module('beerlogApp', [
         controller: 'MyBeers',
         authenticate: true
       })
-      .when('/beers/mybeers', {
-        templateUrl: 'partials/beers/mybeers',
-        controller: 'MyBeers',
-        authenticate: true
-      })
-      .when('/beers/mybeers/:beerId', {
-        templateUrl: 'partials/beers/mybeer',
-        controller: 'MyBeers',
-        authenticate: true
-      })
       .when('/beer/search', {
         templateUrl: 'partials/beer/search',
-        controller: 'Beer',
+        controller: 'BeerCtrl',
         authenticate: false
       })
       .when('/beer/:id', {
         templateUrl: 'partials/beer/beerDetail',
-        controller: 'Beer',
+        controller: 'BeerCtrl',
+        authenticate: false
+      })
+      .when('/user/:id', {
+        templateUrl: 'partials/user/userDetail',
+        controller: 'ProfileCtrl',
         authenticate: false
       })
       .otherwise({

@@ -1,8 +1,7 @@
 #!/bin/bash
 
-function cleanup {
-  rm heroku/dist
-}
+# remove old build
+rm -rf heroku/dist
 
 # generate site and compile sass
 grunt build
@@ -12,9 +11,6 @@ if [ ! -d "dist" ]; then
   echo 'Canceled deploy: dist directory not found!';
   exit 1;
 fi
-
-# remove old build
-rm heroku/dist
 
 # copy the new build
 cp -R dist heroku

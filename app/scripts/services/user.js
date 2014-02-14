@@ -10,10 +10,7 @@ angular.module('beerlogApp')
         params: {}
       },
       get: {
-        method: 'GET',
-        params: {
-          id:'me'
-        }
+        method: 'GET'
       }
 	  });
   });

@@ -23,6 +23,7 @@
         <li class="dropdown" ng-show="currentUser.name">
           <a href="" class="dropdown-toggle" data-toggle="dropdown">{{ currentUser.name }} <b class="caret"></b></a>
           <ul class="dropdown-menu">
+            <li><a href="/user/{{currentUser._id}}">My Profile</a></li>
             <li><a href="/settings">Settings</a></li>
             <li class="divider"></li>
             <li ng-show="currentUser" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">Logout</a></li>

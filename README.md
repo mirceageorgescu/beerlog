@@ -12,12 +12,18 @@ First of all you will need to install [node.js](http://nodejs.org), [Compass](ht
     npm install -g bower
     bower install
 
+## Import beer db
+
+    cd db
+    mongoimport --db fullstack-dev --collection beers --file beers.json
+
 ## Build
     
     grunt build
 
 ## Run the server
 
+    mongod
     grunt serve
 
 ## Deploy to Heroku

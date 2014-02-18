@@ -1,5 +1,7 @@
 node_modules
 public
+db
+app/images/beer
 .tmp
 .sass-cache
 .DS_Store
